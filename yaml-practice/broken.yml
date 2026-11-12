@@ -1,0 +1,13 @@
+services:
+  app:
+    image: python:3-slim
+    volumes:
+      - ./app:/app
+
+  cache:
+    image: redis:7
+    volumes:
+      - cachedata:/data
+volumes:
+  cachedata:
+

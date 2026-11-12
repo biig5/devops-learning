@@ -1,0 +1,23 @@
+services:
+  web:
+   image: nginx:latest
+   ports:
+     - "8081:80"
+   volumes:
+     - ./site:/usr/share/nginx/html
+
+  db:
+    image: mysql:8
+    environment:
+     MYSQL_ROOT_PASSWORD: mypass
+     MYSQL_DATABASE: appdb
+    volumes:
+     - mysqldata:/var/lib/mysql
+
+  cache:
+    image: redis:7
+    volumes:
+      - cachedata:/data
+volumes:
+  cachedata:
+  mysqldata:
