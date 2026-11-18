@@ -1,0 +1,10 @@
+name: Hello
+on: push
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: say hello
+              run: echo "Hello fromGithub Actions"
+            - name: Show who pushed
+              run: echo "Pushed by ${{ github.actor }}"
