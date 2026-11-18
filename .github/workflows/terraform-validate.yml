@@ -1,0 +1,17 @@
+name: Terraform validate
+on: push
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: action/checkout@v4
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Validate each project
+        run: |
+          for dir in terraform-lab tf-remote-lab tf-module-lab; do
+            echo '== $dir"
+            terraform -chdir=$dir init -backend=false -input=false
+            terraform -chdir=$dir validate
+          done
