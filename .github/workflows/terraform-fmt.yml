@@ -1,5 +1,8 @@
 name: Terraform fmt
-on: push
+on:
+  push:
+    branches: [main]
+  pull_request:
 jobs:
   fmt:
     runs-on: ubuntu-latest
@@ -7,6 +10,6 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v4
       - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
-      - name: Check formatting
-        run: terraform fmt -check -recursive
+      uses: hashicorp/setup-terraform@v3
+      name: Check formatting
+      run: terraform fmt-check -recursive

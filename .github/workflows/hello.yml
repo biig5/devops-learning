@@ -1,10 +1,10 @@
 name: Hello
-on: push
+on: workflow_dispatch
 jobs:
-    hello:
-        runs-on: ubuntu-latest
-        steps:
-            - name: say hello
-              run: echo "Hello from Github Actions"
-            - name: Show who pushed
-              run: echo "Pushed by ${{ github.actor }}"
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello from Github Actions"
+      - name: Show who pushed
+        run: echo "Pushed by ${{ github.actor }}"
