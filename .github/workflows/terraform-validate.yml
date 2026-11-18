@@ -10,8 +10,8 @@ jobs:
         uses: hashicorp/setup-terraform@v3
       - name: Validate each project
         run: |
-          for dir in terraform-lab tf-remote-lab tf-module-lab; do
-            echo '== $dir"
+          for dir in terraform-lab tf-remote-lab tf-modules-lab; do
+            echo "== $dir"
             terraform -chdir=$dir init -backend=false -input=false
             terraform -chdir=$dir validate
           done
