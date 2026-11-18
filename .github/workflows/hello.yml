@@ -5,6 +5,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: say hello
-              run: echo "Hello fromGithub Actions"
+              run: echo "Hello from Github Actions"
             - name: Show who pushed
               run: echo "Pushed by ${{ github.actor }}"
