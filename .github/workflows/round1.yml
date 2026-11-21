@@ -1,0 +1,13 @@
+name: Round 1
+on: push
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: check out the code
+              uses: actions/checkout@v4
+            - name: List the files
+              run: ls -ls
+            - name: Say who pushed
+              run: echo "Pushed by ${{ github.actor }}"
+              
