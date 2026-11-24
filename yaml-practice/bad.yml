@@ -1,5 +1,5 @@
 services:
   web:
     images: nginx-latest
-    port:
+    ports:
       - "8080:80"
