@@ -2,9 +2,13 @@ name: Compose check
 on: 
   push:
     branches: [main]
-    paths: ['yaml-practice/**']
+    paths: 
+      - 'yaml-practice/**'
+      - '.github/workflows/compose-check.yml'
   pull_request:
-    paths: 'yaml-practice/**'
+    paths: 
+      - 'yaml-practice/**'
+      - '.github/workflows/compose-check.yml'
 jobs:
   compose-check:
     runs-on: ubuntu-latest
