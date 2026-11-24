@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths: ['yaml-practice/**']
   pull_request:
-    paths: ['yaml-practice/**']
+    paths: 'yaml-practice/**'
 jobs:
   compose-check:
     runs-on: ubuntu-latest
