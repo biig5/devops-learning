@@ -7,7 +7,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - name: Checkout code
-         uses: actions/checkour@v4
+         uses: actions/checkout@v4
        - name: List docker-demo files
          run: ls docker-demo
   report:
