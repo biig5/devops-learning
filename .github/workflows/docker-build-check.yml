@@ -1,0 +1,21 @@
+name: Docker build check
+on:
+  pull_request:
+     paths:
+       - "docker-demo/**"
+       - ".github/workflows/docker-build-check.yml"
+  workflow_dispatch:
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t devops-demo:test docker-demo/
+      - name: Run  container
+        run: docker run -d --name demo -p 8080:80 devops-demo:test
+      - name: Check page responds
+        run: |
+          sleep 3
+          curl --fail http://localhost:8080
